@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { X, Check, AlertCircle } from "lucide-react";
+import { X, AlertCircle } from "lucide-react";
 import { EditModalProps, UserFormData } from "../../types";
 
 const userSchema = z.object({
@@ -304,7 +304,6 @@ export const EditModal: React.FC<EditModalProps> = ({
                 disabled={isSubmitting}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Check size={16} />
                 <span>{isSubmitting ? "Saving..." : "Save Changes"}</span>
               </button>
             </div>

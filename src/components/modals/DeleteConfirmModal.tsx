@@ -18,7 +18,7 @@ export const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
             Confirm Delete
           </h2>
           <p className="text-gray-600 mb-6">
-            Are you sure you want to delete the profile for{" "}
+            Are you sure you want to delete the profile for
             <strong>{userName}</strong>? This action cannot be undone.
           </p>
           <div className="flex justify-end space-x-3">

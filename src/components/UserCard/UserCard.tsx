@@ -13,28 +13,25 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
   const isLiked: boolean = likedUsers.has(user.id);
   const avatarUrl: string = getAvatarUrl(user.username);
 
-  const handleEdit = (): void => {
+  const handleEdit = () => {
     setEditModalOpen(true);
   };
 
-  const handleDelete = (): void => {
+  const handleDelete = () => {
     setDeleteModalOpen(true);
   };
 
-  const handleConfirmDelete = (): void => {
+  const handleConfirmDelete = () => {
     deleteUser(user.id);
     setDeleteModalOpen(false);
   };
 
-  const handleSaveEdit = (updatedData: UserFormData): void => {
+  const handleSaveEdit = (updatedData: UserFormData) => {
     updateUser(user.id, updatedData);
   };
 
-  const handleImageError = (
-    e: React.SyntheticEvent<HTMLImageElement, Event>
-  ): void => {
-    const target = e.target as HTMLImageElement;
-    target.src = FALLBACK_AVATAR;
+  const handleImageError = (e: React.ChangeEvent<HTMLImageElement>) => {
+    e.target.src = FALLBACK_AVATAR;
   };
 
   return (
